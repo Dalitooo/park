@@ -1,0 +1,13 @@
+const mongoose = require('mongoose');
+const Floor = require('./floor');
+
+const parkingLotSchema = new mongoose.Schema({
+    floors: [{
+        type: String,
+        ref: 'floor'
+    }]
+});
+
+const ParkingLot = mongoose.model("parkingLot", parkingLotSchema);
+
+module.exports = ParkingLot;
